@@ -1,0 +1,73 @@
+.flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    flex-direction: column;
+    height: 100%;
+}
+
+.title {
+    font-family: "Montserrat", serif;
+    font-weight: 400;
+    color: rgb(230, 230, 230);
+}
+
+@keyframes colorChange {
+    0% {color: #007bff;}
+    10% {color: #ff6f61;}
+    20% {color: #7fff00;}
+    30% {color: #6a5acd;}
+    40% {color: #dc143c;}
+    50% {color: #40e0d0;}
+    60% {color: #ff69b4;}
+    70% {color: #daa520;}
+    80% {color: #ba55d3;}
+    90% {color: #2e8b57;}
+    100% {color: #ff8c00;}
+}
+
+.typed-text {
+    animation: colorChange 10s infinite;
+    font-family: 'Lexend', serif;
+    margin: 20px 0;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+h3.title {
+    color: rgb(182, 182, 182);
+}
+
+input {
+    border-radius: 20px;
+    border: none;
+    background-color: #434343;
+    padding: 10px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Montserrat', serif;
+    color: white;
+}
+
+input::placeholder {
+    color: #b9baba;
+}
+
+input:focus {
+    color: white;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 17px;
+    font-family: 'Montserrat', serif;
+    font-weight: bold;
+    background-color: #4e4e4e;
+    color: rgb(226, 226, 226);
+    cursor: pointer;
+}

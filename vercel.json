@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/backend/index.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/frontend/build/$1"
+      }
+    ],
+    "build": {
+      "env": {
+        "NODE_ENV": "production",
+        "UNSPLASH_ACCESS_KEY": "UQKdsCKoGSEN8Xn2Phji3AqVlMwcCRdhoWw6biCT3Cg"
+      }
+    }
+  }
