@@ -1,8 +1,8 @@
-require('dotenv').config();
+
 
 const getImages = async(req, res) => {
     const theme = req.query.theme || 'Anime';
-    const url = `https://api.unsplash.com/search/photos?page=1&query=${theme}&orientation=portrait&per_page=12&client_id=${process.env.UNSPLASH_SECRET_KEY}`;
+    const url = `https://api.unsplash.com/search/photos?page=1&query=${theme}&orientation=portrait&per_page=12&client_id=UQKdsCKoGSEN8Xn2Phji3AqVlMwcCRdhoWw6biCT3Cg`;
 
     try {
         const response = await fetch(url);
