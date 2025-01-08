@@ -13,7 +13,7 @@ export default function StartMenu() {
     return (
         <div className={`${styles.container} ${styles["flex-centered"]}`}>
             <h1 className={styles.title}>Memory Game</h1>
-            <h3 className={styles.title}>Choose whatever theme you want</h3>
+            <h3 className={styles.title}>Choose any theme you want</h3>
             <div className={styles["typed-text"]}>
                 <TypeAnimation
                     sequence={[
