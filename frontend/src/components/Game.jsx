@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./Game.module.css";
 import { useSearchParams, Link } from "react-router-dom";
+import fetchImages from './utils/fetchImages.js';
 
-const SECRET_KEY = "";
 
 export default function Gallery() {
     const [images, setImages] = useState([]);
@@ -14,27 +14,20 @@ export default function Gallery() {
     const [hover, setHover] = useState({ onHover: false, id: null });
     const theme = searchParams.get("theme") || "Anime";
 
+    
     useEffect(() => {
-        const fetchImages = async () => {
+        const loadImages = async () => {
             setIsLoading(true);
             try {
-                const response = await fetch(
-                    `https://localhost:9000/api/images`
-                );
-                const results = response.json();
-
-                if (response.ok) {
-                    setImages(results.results);
-                } else {
-                    throw new Error(results.error || 'Unknown error')
-                }
+                const images = await fetchImages(theme);
+                setImages(images);
             } catch (error) {
                 console.error(`Error fetching images: ${error}`);
             } finally {
                 setIsLoading(false);
             }
         };
-        fetchImages();
+        loadImages();
     }, [theme]);
 
     useEffect(() => {
