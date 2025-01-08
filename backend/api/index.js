@@ -9,11 +9,11 @@ const getImages = require(path.join(__dirname, '/api/utils.js'))
 
 require('dotenv').config();
 
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 app.use(cors());
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/dist", 'index.html'));
+    res.sendFile(path.join(__dirname, "../../frontend/dist", 'index.html'));
 })
 
 app.get('/api/images', async (req, res) => {
