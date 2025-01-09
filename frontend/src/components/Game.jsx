@@ -92,7 +92,9 @@ export default function Gallery() {
             </Link>
             <Stats counter={clickedImagesIds.length} best={best} />
             {isLoading ? (
-                <span className={styles.loader}></span>
+                <span className={`${styles['loader-container']} ${styles['flex-centered']}`}>
+                    <span className={styles.loader}></span>
+                </span>
             ) : (
                 <>
                     <div className={styles.gallery}>
