@@ -9,7 +9,7 @@ export default async function fetchImages(theme) {
         if (response.ok) {
             return responseJSON.results;
         } else {
-            const errorMessage = responseJSON.error.message || 'Unknown error';
+            const errorMessage = response.error.message || 'Unknown error';
             throw new Error(`Error fetching images from API: ${errorMessage}`);
         }
     } catch (err) {

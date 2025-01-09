@@ -1,5 +1,12 @@
-import { Outlet } from "react-router";
+import { Outlet, Link } from "react-router-dom";
 
 export default function App() {
-    return <Outlet />;
+    return (
+    <>
+        <Outlet />
+        <footer>By{" "}
+            <Link to="https://github.com/mopuk">MopuK</Link>
+        </footer>
+    </>
+    );
 }

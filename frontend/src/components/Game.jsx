@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Game.module.css";
 import { useSearchParams, Link } from "react-router-dom";
-import fetchImages from './utils/fetchImages.js';
+import fetchImages from '../utils/fetchImages.js';
 
 
 export default function Gallery() {
@@ -74,7 +74,7 @@ export default function Gallery() {
 
     return (
         <div className={styles.container}>
-            <Link to="/" className={styles["back-button"]}>
+            <Link to="/" className={`${styles["back-button"]} ${styles["flex-centered"]}`}>
                     <svg
                         height="20px"
                         id="Layer_1"
@@ -86,14 +86,15 @@ export default function Gallery() {
                         xmlns="http://www.w3.org/2000/svg"
                         xmlnsXlink="http://www.w3.org/1999/xlink"
                     >
-                        <polygon points="352,128.4 319.7,96 160,256 160,256 160,256 319.7,416 352,383.6 224.7,256 " />
+                        <polygon fill="#AAAAAA" points="352,128.4 319.7,96 160,256 160,256 160,256 319.7,416 352,383.6 224.7,256 " />
                     </svg>
+                    Back
             </Link>
+            <Stats counter={clickedImagesIds.length} best={best} />
             {isLoading ? (
                 <span className={styles.loader}></span>
             ) : (
                 <>
-                    <Stats counter={clickedImagesIds.length} best={best} />
                     <div className={styles.gallery}>
                         {positions.map((position) => {
                             return (
